@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GS Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="icon" href="/static/img/userkuma.ico">
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      header{
+        width: 100%;
+        padding: 0px 25px;
+
+        font-family: "Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #F5D800;
+        background-color: #000;
+      }
+      .logo{
+        color: #F5D800;
+        text-decoration: none;
+
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      /* nav bar */
+      .nav-list{
+        display: inline-block;
+      }
+      .nav-list li {
+        list-style: none;
+        display: inline;
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: 12px;
+        cursor: pointer;
+      }
+      .nav-pages {
+        margin-left: -30px;
+      }
+      .nav-settings {
+        position: absolute;
+        right: 20px;
+      }
+
+      /* main */
+      main{
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 30px 0px;
+      }
+      .list-sort-select{
+        width: 100px;
+        height: 30px;
+        font-size: 14px;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("../imgs/list_24px.svg");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: 8% 45%;
+        text-indent: 30px;
+        cursor: pointer;
+      }
+      .text-field {
+        padding: 5px 8px;
+        border-radius: 8px;
+      }
+      .text-field:focus {
+        outline: none;
+      }
+      .filter-field{
+        margin-bottom: 30px;
+
+        background-image: url("../imgs/filter_24px.svg");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: 97% 45%;
+      }
+      .add-topic-field{
+        margin-top: 10px;
+      }
+      .add-topic-button{
+        font-weight: bold;
+        font-size: 14px;
+        padding: 7px 10px;
+        text-decoration: none;
+        color: #333;
+        background: #FFFF80;
+      }
+
+      table {
+        min-width: 600px;
+      }
+      table tr {
+        height: 2em;
+      }
+      table th,td {
+        text-align: center;
+      }
+      .topic-name{
+        max-width: 100px;
+        text-align: left;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .status-box-empty{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: #fff;
+        border: 1px solid #000;
+      }
+      .status-box-ongoing{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: #FFFF80;
+        border: 1px solid #000;
+      }
+      .status-box-done{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: #54D86B;
+        border: 1px solid #000;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">GeekSecretary</a>
+      <nav class="nav-list nav-pages">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li><img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/20/github-20.png" /></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-list nav-settings">
+        <ul>
+          <li>Settings</li>
+          <li>Logout</li>
+        </ul>
+      </nav>  
+
+    </header>
+
+    <main>
+      <div>
+        <input type="text" class="text-field filter-field" />
+        <select class="list-sort-select">
+          <option>登録順</option>  
+          <option>五十音順</option>  
+        </select>  
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Learn</th>
+            <th>Project</th>
+            <th>Teach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="topic-name">React</td>
+            <td><span class="status-box-empty"></span></td>
+            <td><span class="status-box-ongoing"></span></td>
+            <td><span class="status-box-done"></span></td>
+          </tr>
+          <tr>
+            <td class="topic-name">Redux</td>
+            <td class="status-box">■</td>
+            <td class="status-box">■</td>
+            <td class="status-box">■</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="text" class="text-field add-topic-field" />
+      <button class="add-topic-button">Add New Topic</button>
+    </main>
+
+    <footer>
+
+    </footer>
+
+  </body>
+</html>
