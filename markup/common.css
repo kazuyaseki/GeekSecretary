@@ -1,0 +1,45 @@
+html {
+  font-family: sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 0px 25px;
+
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  color: #f5d800;
+  background-color: #000;
+}
+
+.logo {
+  color: #f5d800;
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* nav bar */
+
+.nav-list {
+  display: inline-block;
+}
+
+.nav-list li {
+  list-style: none;
+  display: inline;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.nav-pages {
+  margin-left: -30px;
+}
+
+.nav-settings {
+  position: absolute;
+  right: 20px;
+}
