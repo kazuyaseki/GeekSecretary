@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>GS Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./common.css">
+  <link rel="icon" href="/static/img/userkuma.ico">
+  <style>
+    /* main */
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 30px 0px;
+
+      display: grid;
+      grid-template-columns: 2fr 7fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'g0 g1';
+    }
+
+    sidebar {
+      grid-area: g0;
+    }
+
+    main {
+      grid-area: g1;
+    }
+
+    .list-sort-select {
+      width: 100px;
+      height: 30px;
+      font-size: 14px;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("../imgs/list_24px.svg");
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position: 8% 45%;
+      text-indent: 30px;
+      cursor: pointer;
+    }
+
+    .text-field {
+      padding: 5px 8px;
+      border-radius: 8px;
+    }
+
+    .text-field:focus {
+      outline: none;
+    }
+
+    .filter-field {
+      margin-bottom: 30px;
+
+      background-image: url("../imgs/filter_24px.svg");
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position: 97% 45%;
+    }
+
+    .add-topic-field {
+      margin-top: 10px;
+    }
+
+    .add-topic-button {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 7px 10px;
+      text-decoration: none;
+      color: #333;
+      background: #FFFF80;
+    }
+
+    table {
+      min-width: 600px;
+    }
+
+    table tr {
+      height: 2em;
+    }
+
+    table th,
+    td {
+      text-align: center;
+    }
+
+    .topic-name {
+      max-width: 100px;
+      text-align: left;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .status-box-empty {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #000;
+    }
+
+    .status-box-ongoing {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: #FFFF80;
+      border: 1px solid #000;
+    }
+
+    .status-box-done {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: #54D86B;
+      border: 1px solid #000;
+    }
+
+    /* sidebar */
+
+    sidebar {
+      margin-right: 40px;
+    }
+
+    sidebar li {
+      cursor: pointer;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .sub-directories {
+      margin-left: -20px;
+    }
+
+    .list-directory-button {
+      border: none;
+      height: 10px;
+      float: right;
+    }
+
+    /* main */
+
+    .directories-breadcrumbs {
+      margin-left: -40px;
+    }
+
+    .directories-breadcrumbs ul li {
+      list-style: "/";
+      display: inline;
+      cursor: pointer;
+    }
+
+    .directories-breadcrumbs ul li:not(:first-child):before {
+      content: "/";
+      padding-right: 10px;
+    }
+
+    h3 {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="/" class="logo">GeekSecretary</a>
+    <nav class="nav-list nav-pages">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/20/github-20.png" />
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav-list nav-settings">
+      <ul>
+        <li>Settings</li>
+        <li>Logout</li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="container">
+    <sidebar>
+      <ul>
+        <li class="top-directory">Learn
+          <button class="list-directory-button">+</button>
+          <ul class="sub-directories">
+            <li>tutorials
+              <button class="list-directory-button">-</button>
+            </li>
+            <li>examples
+              <button class="list-directory-button">-</button>
+            </li>
+            <li>articles
+              <button class="list-directory-button">-</button>
+            </li>
+            <li>videos
+              <button class="list-directory-button">-</button>
+            </li>
+            <li>etc
+              <button class="list-directory-button">-</button>
+            </li>
+          </ul>
+        </li>
+        <li class="top-directory">Project</li>
+        <li class="top-directory">Teach</li>
+      </ul>
+    </sidebar>
+
+    <main>
+      <div class="directories-breadcrumbs">
+        <ul>
+          <li>React</li>
+          <li>Learn</li>
+          <li>Tutorials</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Links</h3>
+        <ul>
+          <li>
+            <a href="/">ほにゃらら</a>
+          </li>
+          <li>
+            <a href="/">ほにゃらら</a>
+          </li>
+        </ul>
+        <input type="text" class="text-field add-topic-field" placeholder="タイトル" />
+        <input type="text" class="text-field add-topic-field" placeholder="URL" />
+        <button class="add-topic-button">Add New Topic</button>
+      </div>
+
+      <div>
+        <h3>Memo</h3>
+        <button>編集する</button>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur tellus et libero fringilla, ut dapibus libero
+          faucibus. Donec egestas metus et nisi lacinia, sed iaculis nibh pretium. In facilisis ut sapien nec elementum.
+          Nam lorem lectus, tincidunt sed lacus sit amet, molestie varius arcu. Nam vel dignissim metus. Nullam nisl libero,
+          viverra et dignissim ut, dapibus sed risus. Donec vestibulum luctus orci, id fermentum turpis elementum eget. Duis
+          consequat laoreet nibh at tempus. Nam rutrum magna nisl, eu egestas diam rutrum sit amet. Morbi ex erat, feugiat
+          eu blandit vel, elementum ac tellus. Nunc at viverra ex. Sed volutpat vestibulum lorem sit amet egestas. Aliquam
+          quis nibh eu libero accumsan placerat. Donec sagittis sapien ex, vitae venenatis mi fringilla ac. Quisque sollicitudin
+          eros non aliquet pretium. Donec sed maximus ex, at tincidunt nisl. Nam vestibulum, metus eu malesuada molestie,
+          tellus sapien interdum libero, id consectetur felis tortor sit amet est. Morbi et erat nec justo aliquam mollis
+          in eu sapien. Sed vestibulum nisl eget interdum fringilla. Fusce vestibulum nisl ex, eu convallis orci sodales
+          at. Vivamus at turpis erat. Sed sodales nisl vulputate justo pellentesque, a dapibus mi gravida. Curabitur maximus
+          vel diam et blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          Pellentesque rhoncus, orci sed semper dictum, augue risus mattis dolor, at lobortis enim purus at lacus. Etiam
+          eros ante, hendrerit vitae porta id, commodo in arcu. Sed id magna eu nisi consequat lobortis vel eu nisl. Duis
+          eu orci dui. Vivamus accumsan dolor vel nibh dapibus ornare. Suspendisse dignissim ut leo id fringilla. Sed metus
+          massa, ornare ac ante et, dignissim tristique velit. Sed ex tellus, posuere sit amet aliquet nec, pellentesque
+          eget sapien. Cras urna orci, euismod vitae aliquam sed, lobortis vel erat. Praesent in leo metus. Nullam fringilla
+          sem in pulvinar aliquam. Maecenas ullamcorper, libero ut imperdiet consequat, sem tellus interdum lectus, ac viverra
+          leo lectus eget tellus. Aenean euismod aliquam leo, at placerat nisl imperdiet eu. Morbi feugiat sit amet enim
+          id interdum. Donec mattis, leo sed pulvinar congue, metus orci condimentum nisi, a rutrum neque velit sodales mi.
+          Morbi tincidunt est orci, lacinia sagittis metus cursus sit amet. Phasellus at placerat sem. Nullam vitae auctor
+          mauris. Suspendisse congue eu sem eget venenatis. Ut eleifend sodales commodo. Pellentesque sed bibendum ipsum.
+          Donec tristique mollis est, vestibulum vestibulum nibh vehicula nec. Duis at ex eget neque aliquet mattis. Maecenas
+          finibus tellus elit, quis hendrerit orci suscipit vel. Nulla facilisi. Pellentesque facilisis erat quis leo sodales,
+          ut commodo neque varius. Suspendisse ut felis mi. Praesent ac leo ac dui venenatis tincidunt.
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>
