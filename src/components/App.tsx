@@ -3,13 +3,13 @@ import * as ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import HomeContainer from "../containers/HomeContainer";
-import Layout from "./Layout";
+import LayoutContainer from "../containers/LayoutContainer";
 import NotFound from "./NotFound";
 
 export default function App(_props: any) {
   return (
     <BrowserRouter>
-      <Layout
+      <LayoutContainer
         children={
           <Switch>
             <Route path="/404" exact component={NotFound} />
