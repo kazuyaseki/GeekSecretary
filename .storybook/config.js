@@ -1,12 +1,10 @@
 import { configure } from "@storybook/react";
 import "../css/style.css";
 
+const req = require.context("../src/components/stories", true, /.js$/);
+
 function loadStories() {
-  require("../src/components/stories/Header");
-  require("../src/components/stories/inputFields");
-  require("../src/components/stories/Sidebar");
-  require("../src/components/stories/breadcrumbs");
-  require("../src/components/stories/TopicMain");
+  req.keys().forEach(filename => req(filename));
 }
 
 configure(loadStories, module);
