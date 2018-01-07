@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>GS Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./common.css">
+  <link rel="icon" href="/static/img/userkuma.ico">
+  <style>
+    /* main */
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 30px 0px;
+
+      display: grid;
+      grid-template-columns: 2fr 7fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'g0 g1';
+    }
+
+    main {
+      grid-area: g1;
+      padding-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="/" class="logo">GeekSecretary</a>
+    <nav class="nav-list nav-pages">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/20/github-20.png" />
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav-list nav-settings">
+      <ul>
+        <li>Settings</li>
+        <li>Logout</li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="container">
+    <aside class="settings-sidebar">
+      <ul>
+        <li>認証情報</li>
+        <li class="selected">デフォルトディレクトリ</li>
+        <li>メモテンプレート</li>
+      </ul>
+    </aside>
+
+    <main>
+      <h3>デフォルトディレクトリ</h3>
+      <p class="description">トピックのLearnにデフォルトで追加するディレクトリを指定できます。</p>
+
+      <input type="text" class="text-field add-directory-field" placeholder="ディレクトリ名" />
+      <button class="add-directory-button">Add New Directory</button>
+
+      <ul class="directories">
+        <li>tutorials
+          <button>編集する</button>
+          <button>-</button>
+        </li>
+        <li>examples
+          <button>編集する</button>
+          <button>-</button>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>
