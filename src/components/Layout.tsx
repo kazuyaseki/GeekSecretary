@@ -20,11 +20,11 @@ export default function Layout(props: {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <Header authorized={props.authorized} onClick={popupLogin} />
       <div>{props.children}</div>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 
